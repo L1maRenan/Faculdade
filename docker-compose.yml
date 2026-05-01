@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    container_name: meu-container_name
+    restart: always
+    environment: 
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: senha
+      POSTGRES_DB: meubanco
+    ports:
+       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/posgresql/postgres_data
+
+volumes:
+  postgres_data:
